@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Predicting song chart longevity | Ian Lam</title>
+<meta name="description" content="Predicting song chart longevity: a project by Ian Lam.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="page project">
+  <a class="back" href="../index.html#projects">← Back to all projects</a>
+
+  <h1>Predicting song chart longevity</h1>
+  <p class="date">Apr to May 2026</p>
+  <p class="lead">A three-person course project on weekly Spotify charts: 5.4 million rows, 110,000 songs, 77 countries. We asked whether where a song debuts predicts how long it stays on the charts.</p>
+  <p class="tags">Python, pandas, scikit-learn, XGBoost, SHAP</p>
+
+  <h2>Results</h2>
+  <div class="chart" role="group" aria-label="Cross-validated R squared by feature set">
+          <div class="bar-row">
+            <div class="bar-head"><span>Geography only</span><b>0.20</b></div>
+            <div class="bar"><span style="--v: 0.20"></span></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-head"><span>Plus artist history, song, genre</span><b>0.33</b></div>
+            <div class="bar"><span style="--v: 0.33"></span></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-head"><span>Plus week-2/3 stream trajectory</span><b>0.75</b></div>
+            <div class="bar"><span class="hl" style="--v: 0.75"></span></div>
+          </div>
+          <p class="note">Cross-validated R² of XGBoost predicting log(1 + weeks on chart), nested 5-fold. Lasso scored lower each time (0.09 with geography alone).</p>
+        </div>
+  <p class="body">Early stream growth dominated the SHAP importance ranking. That last result uses the first three weeks of data, so it answers a different question than the first two bars.</p>
+
+    <!-- EDIT: the write-up. Put spotify.pdf in this projects/ folder (compile your LaTeX to PDF first). -->
+    <h2>Full write-up</h2>
+    <p><a class="btn" href="spotify.pdf">Open the PDF</a></p>
+    <iframe class="pdf-frame" src="spotify.pdf" title="Predicting song chart longevity write-up"></iframe>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,301 @@
+:root {
+  --ink: #161823;        /* main text */
+  --muted: #8a8b91;      /* dates, small text */
+  --line: #dcdde0;       /* thin borders */
+  --red: #fe2c55;        /* accent */
+  --tint: #fff7f8;       /* pale pink panels */
+  --track: #ececee;      /* empty part of bars */
+  --font: "TikTok Sans", "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+p { margin: 0; }
+ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+li { margin-top: 0.35rem; }
+li::marker { color: var(--red); }
+a { color: var(--red); text-underline-offset: 0.2em; }
+a:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+
+.page { max-width: 64rem; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+/* Two columns: heading on the left, content on the right */
+.block {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  gap: 1rem 4rem;
+  padding: 3rem 0;
+  border-top: 1px solid var(--line);
+}
+.block.top { border-top: 0; padding-top: 0; }
+
+h1, h2, h3 { margin: 0; line-height: 1.2; }
+h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 1rem; }
+h2 { font-size: 1.6rem; font-weight: 700; }
+h3 { font-size: 1.05rem; font-weight: 700; }
+
+.pfp {
+  display: block;
+  width: 9rem;
+  height: 9rem;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+.intro p { max-width: 38rem; }
+.intro .email { margin-top: 0.75rem; }
+
+.entry + .entry { margin-top: 2rem; }
+.date { color: var(--muted); font-size: 0.85rem; margin-top: 0.1rem; }
+.sub { color: var(--muted); margin-top: 0.1rem; }
+.body { margin-top: 0.5rem; max-width: 40rem; }
+.tags { color: var(--muted); font-size: 0.85rem; margin-top: 0.6rem; }
+.btn {
+  display: inline-block;
+  margin-top: 0.7rem;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--red);
+  border-radius: 0.3rem;
+  color: var(--red);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.btn:hover { background: var(--tint); }
+
+/* Spotify bar chart */
+.chart {
+  margin-top: 0.9rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--tint);
+  border-radius: 0.5rem;
+  max-width: 40rem;
+}
+.bar-row + .bar-row { margin-top: 0.85rem; }
+.bar-head { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.9rem; }
+.bar-head b { font-weight: 700; }
+.bar {
+  height: 0.6rem;
+  margin-top: 0.3rem;
+  background: var(--track);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.bar > span {
+  display: block;
+  height: 100%;
+  width: calc(var(--v) / 0.8 * 100%);   /* full bar = 0.80 */
+  background: var(--ink);
+  opacity: 0.35;
+  border-radius: 99px;
+}
+.bar > span.hl { background: var(--red); opacity: 1; }
+.chart .note { color: var(--muted); font-size: 0.8rem; margin-top: 0.9rem; }
+
+video {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  border-radius: 0.5rem;
+  background: #000;
+}
+.caption { font-size: 1.15rem; font-weight: 700; line-height: 1.4; }
+
+.skills dt { font-weight: 700; }
+.skills dd { margin: 0 0 1rem; }
+
+@media (max-width: 760px) {
+  .page { padding: 2.5rem 1.25rem 4rem; }
+  .block { grid-template-columns: 1fr; padding: 2rem 0; gap: 1rem; }
+  h1 { font-size: 2.4rem; }
+}
+
+/* ---------- Project pages ---------- */
+.back { display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; }
+.project h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
+.project .lead { max-width: 40rem; margin-top: 1rem; }
+.project h2 { margin-top: 2.5rem; font-size: 1.3rem; }
+.project h2 + p { margin-top: 0.5rem; max-width: 40rem; }
+.pdf-frame {
+  width: 100%;
+  height: 85vh;
+  min-height: 32rem;
+  margin-top: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+}
+.project .chart { margin-top: 1.5rem; }
+
+
+/* Project titles on the home page */
+.plink { color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--red); }
+.plink:hover { color: var(--red); }
+.more { display: inline-block; margin-top: 0.5rem; font-size: 0.9rem; }
+
+/* HeriTab gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.gallery a { display: block; }
+.gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  transition: transform 0.15s ease;
+}
+.gallery a:hover img { transform: translateY(-2px); }
+.gallery a:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 0.5rem; }
+.project .links { margin-top: 1.25rem; }
+.project .plain { margin-top: 0.75rem; max-width: 40rem; }
+
+/* Project page buttons side by side */
+.project .links .btn + .btn { margin-left: 0.5rem; }
+
+/* ---------- Project cards ---------- */
+.block.wide { grid-template-columns: 1fr; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(22, 24, 35, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(22, 24, 35, 0.12); }
+.card:focus-within { outline: 2px solid var(--red); outline-offset: 3px; }
+
+
+.card-body { display: flex; flex-direction: column; flex: 1; padding: 1.4rem 1.5rem 1.5rem; }
+.card h3 { font-size: 1.3rem; line-height: 1.25; }
+.card-link { color: var(--ink); text-decoration: none; }
+.card-link::after { content: ""; position: absolute; inset: 0; }   /* the whole card is clickable */
+.card-link:focus-visible { outline: none; }
+.meta {
+  margin-top: 0.9rem;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.desc { margin-top: 0.9rem; font-size: 0.95rem; line-height: 1.55; }
+.credit { margin-top: 0.6rem; font-size: 0.85rem; color: var(--muted); }
+.pill {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.55rem 1.1rem;
+  border-radius: 99px;
+  background: #eef0f6;
+  color: #6a6c7a;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.card:hover .pill { background: var(--ink); color: #fff; }
+
+/* ---------- Wide cards (Experience) ---------- */
+.cards.rows { grid-template-columns: 1fr; }
+.card.wide { flex-direction: column; }
+.card.wide .card.wide .card-body { padding: 1.7rem 2.2rem; }
+.card.wide h3 { font-size: 1.5rem; }
+.card.wide .desc { max-width: 46rem; }
+@media (max-width: 760px) {
+  .card.wide   .card.wide .card-body { padding: 1.4rem 1.5rem 1.5rem; }
+}
+
+/* ---------- Top of the page: photo + name on the left, contact details on one line at the right ---------- */
+.block.top { display: block; }
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+}
+.who { display: flex; align-items: center; gap: 1.5rem; }
+.who .pfp { margin: 0; flex-shrink: 0; }
+.who h1 { margin: 0; }
+.contact { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
+.contact .flags { font-size: 1.6rem; line-height: 1; }
+.contact a { text-underline-offset: 0.2em; white-space: nowrap; }
+.intro { margin-top: 2rem; }
+@media (max-width: 760px) {
+  .who { gap: 1rem; }
+  .who .pfp { width: 6.5rem; height: 6.5rem; }
+  .who h1 { font-size: 2.4rem; }
+  .intro { margin-top: 1.5rem; }
+}
+
+/* ---------- Things I Like ---------- */
+.topic + .topic { margin-top: 2.5rem; }
+.topic h3 { font-size: 1.15rem; }
+.topic .body { margin-top: 0.4rem; }
+.topic video { margin-top: 0.9rem; }
+.muted { color: var(--muted); }
+
+/* ---------- Figures on project / research pages ---------- */
+.figure { margin: 1.5rem 0 0; max-width: 46rem; }
+.figure img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid var(--line); border-radius: 0.5rem; }
+.figure figcaption { margin-top: 0.5rem; font-size: 0.85rem; line-height: 1.5; color: var(--muted); }
+.figure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1.25rem; max-width: 46rem; margin-top: 1.5rem; }
+.figure-grid .figure { margin: 0; }
+.project .timeline { list-style: none; padding: 0; margin-top: 0.75rem; max-width: 40rem; }
+.project .timeline li { padding-left: 1rem; border-left: 2px solid var(--red); margin-top: 0.9rem; }
+.project .timeline b { display: block; font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+.project .note { margin-top: 1rem; padding: 0.9rem 1.1rem; background: var(--tint); border-radius: 0.5rem; max-width: 40rem; font-size: 0.95rem; }
+
+/* Spacing and line length for text-heavy project pages */
+.project p { max-width: 40rem; }
+.project p + p { margin-top: 0.8rem; }
+.project h3 { margin-top: 2.2rem; font-size: 1.15rem; }
+.project h3 + p { margin-top: 0.5rem; }
+.project .figure + p, .project .figure-grid + p, .project ul + p, .project ol + p { margin-top: 1.2rem; }
+.project .figure + .figure { margin-top: 1.5rem; }
+.figure.small { max-width: 26rem; }
+
+/* Small data tables on project pages */
+.data-table { border-collapse: collapse; width: 100%; max-width: 28rem; margin-top: 1.5rem; font-size: 0.95rem; }
+.data-table caption { caption-side: top; text-align: left; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--muted); }
+.data-table th, .data-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--line); text-align: left; font-weight: 400; }
+.data-table thead th { font-weight: 700; border-bottom: 2px solid var(--ink); }
+.data-table tbody th { font-weight: 600; }
+.data-table td { font-variant-numeric: tabular-nums; }
+.data-table.wide { max-width: 40rem; }
+.data-table.wide tbody th { white-space: nowrap; vertical-align: top; }
+
+/* ---------- Cards without banners: "Read more" on the left, the tag on the bottom right ---------- */
+.card-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 0.8rem; margin-top: auto; padding-top: 1.4rem; }
+.card-foot .pill { margin-top: 0; white-space: nowrap; padding: 0.5rem 0.95rem; font-size: 0.85rem; }
+.badge {
+  margin-left: auto;              /* stays on the right, even if it wraps to its own line */
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}

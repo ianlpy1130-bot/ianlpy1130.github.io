@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ian Lam</title>
+<meta name="description" content="Ian Lam: physics and statistics student at the University of Chicago.">
+
+<!--
+  HOW TO EDIT THIS FILE
+  Edit in VS Code (or any plain-text editor). Do NOT open in TextEdit rich-text mode, Pages, or Word and re-save.
+
+  1. Search for "EDIT" to jump between sections.
+  2. To add an entry, copy a whole <article class="entry"> ... </article> block and change the text.
+  3. Colors and the font are at the top of style.css (the :root block).
+  4. Each project title links to its own page in the projects/ folder.
+  5. Spotify bars: change the --v number (the R² value) and the number shown beside it.
+-->
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+
+  <!-- EDIT: intro -->
+  <section class="block top">
+    <div class="masthead">
+      <div class="who">
+        <!-- EDIT: profile photo (pfp.jpg must be in the same folder as this file) -->
+        <img class="pfp" alt="Photo of Ian Lam" src="pfp.jpg">
+        <h1>Ian Lam</h1>
+      </div>
+      <!-- EDIT: contact details (top right, all on one line) -->
+      <div class="contact">
+        <span class="flags" role="img" aria-label="Hong Kong and Australia">🇭🇰 🇦🇺</span>
+        <a href="mailto:ianlpy@uchicago.edu">ianlpy@uchicago.edu</a>
+        <a href="tel:+13392424537">+1 (339) 242-4537</a>
+      </div>
+    </div>
+    <div class="intro">
+      <p>I study physics and statistics at the University of Chicago. Welcome to my website! Here is where I put all the projects I’ve done, essentially it’s an interactive resume.</p>
+    </div>
+  </section>
+
+  <!-- EDIT: education -->
+  <section class="block">
+    <h2>Education</h2>
+    <div>
+      <article class="entry">
+        <h3>University of Chicago 🐦‍🔥</h3>
+        <p class="date">Sep 2026 to present</p>
+        <p class="body">B.S. in Physics and Statistics, Minor in Data Science. Expected June 2028.</p>
+      </article>
+      <article class="entry">
+        <h3>Tufts University 🐘</h3>
+        <p class="date">Aug 2024 to May 2026</p>
+        <p class="body">Coursework in Physics and Mathematics. GPA 3.95 / 4.00.</p>
+        <p class="tags">Computational Statistics, Machine Learning, Computational Linear Algebra, Experimental Physics</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDIT: experience -->
+  <section class="block wide" id="experience">
+    <h2>Experience</h2>
+    <div class="cards rows">
+      <article class="card wide">
+        <div class="card-body">
+          <h3><a class="card-link" href="projects/mit-lns.html">Research Intern, MIT Laboratory for Nuclear Science</a></h3>
+          <p class="meta">Jun 2025 to present<br>Python, TALYS, LISE++</p>
+          <p class="desc">Research on neutron-rich radioisotope production in support of next-generation electric dipole moment experiments. I calibrated nuclear reaction simulations (TALYS) against published measurements to predict protactinium-229 yields for a proposed proton-activation experiment.</p>
+          <div class="card-foot">
+            <span class="pill">↳ Read more</span>
+            <span class="badge">Research</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card wide">
+        <div class="card-body">
+          <h3><a class="card-link" href="projects/imc-prosperity.html">IMC Prosperity 4 Trading Competition</a></h3>
+          <p class="meta">Apr 2026<br>Python</p>
+          <p class="desc">Team organizer. Top 50 in the U.S. and top 1% worldwide. I led a four-person team and our manual trading strategy, and built Python trading algorithms for simulated multi-asset markets using Black–Scholes pricing, volatility smiles, pairs trading and inventory-aware market making.</p>
+          <div class="card-foot">
+            <span class="pill">↳ Read more</span>
+            <span class="badge">Top 1% worldwide</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDIT: projects -->
+  <section class="block wide" id="projects">
+    <h2>Projects</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="card-body">
+          <h3><a class="card-link" href="projects/eclipsing-binaries.html">Simulating populations of eclipsing binary stars</a></h3>
+          <p class="meta">Feb 2025<br>Astrophysics Laboratory, Tufts</p>
+          <p class="desc">A Monte Carlo model of 100,000 binary stars. About 0.9% eclipse, and those favor short periods and either circular or very eccentric orbits.</p>
+        <p class="credit">With Jason Reeves and Luca Lamardoi</p>
+          <div class="card-foot">
+            <span class="pill">↳ Read more</span>
+            <span class="badge">Group project</span>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <h3><a class="card-link" href="projects/starspots-flares.html">Starspots and flares on an eclipsing binary</a></h3>
+          <p class="meta">Mar 2025<br>Astrophysics Laboratory, Tufts</p>
+          <p class="desc">Do flares on CM Draconis happen more often when the star’s spot flux is positive? 148 of 244 flares did. A bootstrap test says yes (p ≈ 0.009), a t-test on the mean does not (p ≈ 0.21).</p>
+        <p class="credit">With Nick, Amber and Georgie</p>
+          <div class="card-foot">
+            <span class="pill">↳ Read more</span>
+            <span class="badge">Group project</span>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <h3><a class="card-link" href="projects/mcmc.html">Starspot MCMC</a></h3>
+          <p class="meta">Mar 2025<br>Astrophysics Laboratory, Tufts</p>
+          <p class="desc">A Metropolis MCMC sampler written from scratch in Python, tested on a line and a quadratic, then used to fit a sine curve to starspot data from CM Draconis.</p>
+          <div class="card-foot">
+            <span class="pill">↳ Read more</span>
+            <span class="badge">Group project</span>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <h3><a class="card-link" href="projects/spotify.html">Predicting song chart longevity</a></h3>
+          <p class="meta">Apr to May 2026<br>Course project</p>
+          <p class="desc">We asked whether where a song debuts on the charts predicts how long it stays there, using 5.4 million rows of weekly Spotify data. Early stream growth turned out to matter most.</p>
+          <div class="card-foot">
+            <span class="pill">↳ Read more</span>
+            <span class="badge">Group project</span>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <h3><a class="card-link" href="projects/heritab.html">HeriTab</a></h3>
+          <p class="meta">Jun to Jul 2026<br>JavaScript, Chrome extension APIs</p>
+          <p class="desc">A passion project: a Chrome extension that shows a different UNESCO World Heritage Site on every new tab. It caches images so pages open quickly, uses a service worker for background loading, and lets people filter more than 1,000 locations by country and image quality.</p>
+          <div class="card-foot">
+            <span class="pill">↳ Read more</span>
+            <span class="badge">Personal</span>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <h3><a class="card-link" href="projects/letter-recognition.html">Letter recognition neural network</a></h3>
+          <p class="meta">Nov 2026<br>Fortran</p>
+          <p class="desc">Trained neural networks on 20,000 letter samples with 16 features each, comparing network sizes on a validation set. A single hidden layer of 64 neurons reached 94.2% test accuracy, against 77.2% with no hidden layer.</p>
+          <div class="card-foot">
+            <span class="pill">↳ Read more</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDIT: activities -->
+  <section class="block">
+    <h2>Activities</h2>
+    <div>
+      <article class="entry">
+        <h3>Quantitative Trading Sector, Tufts Trading Club</h3>
+        <p class="date">Aug 2025 to May 2026</p>
+        <p class="body">Learned quantitative trading through practice problems and talks from full-time quantitative traders.</p>
+      </article>
+      <article class="entry">
+        <h3>Society of Physics Students, Tufts</h3>
+        <p class="date">Sep 2025 to May 2026</p>
+        <p class="body">Undergraduate representative who organized weekly meetings for physics majors. The chapter received the Outstanding Chapter Award from SPS National in 2025.</p>
+      </article>
+      <article class="entry">
+        <h3>MIT Quantum Computing Winter School</h3>
+        <p class="date">Jan 2026</p>
+        <p class="body">Simulated quantum circuits with Qiskit in a week-long introductory program.</p>
+      </article>
+      <article class="entry">
+        <h3>Maroon Capital 2026/27</h3>
+        <p class="date">Sep 2026 to Present</p>
+        <p class="body">Joined UChicago's selective pre-professional organization, learning about basics of quantitative finance and will work on a personal analyst project.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDIT: skills -->
+  <section class="block">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Tools</dt>
+      <dd>Python, pandas, NumPy, SciPy, scikit-learn, XGBoost, SHAP, Jupyter, MATLAB, JavaScript</dd>
+      <dt>Languages</dt>
+      <dd>English, Cantonese, and Mandarin Chinese (native); Spanish (intermediate)</dd>
+    </dl>
+  </section>
+
+  <!-- EDIT: things I like. Copy a whole <div class="topic"> block to add another topic. -->
+  <section class="block" id="likes">
+    <h2>Things I Like</h2>
+    <div class="likes">
+
+
+
+      <div class="topic">
+        <h3>Geography 🌏</h3>
+        <p class="body">I'm obsessed with geography trivia, and I want to learn basically everything about the world. I'm extremely familiar with every country's capital, their languages, their currencies, and even some subdivisions, so I built this website called HoomanAtlas to train myself since I didn't see anything else on the internet like this. I also play a lot of GeoGuessr in my free time.</p>
+        <!-- EDIT: hoomasatlas.html must be in the same folder as this file. It is a big page (about 20 MB), so it opens in a new tab. -->
+        <p><a class="btn" href="hoomasatlas.html" target="_blank" rel="noopener">Open HoomanAtlas</a></p>
+      </div>
+
+      <div class="topic">
+        <h3>Football/Soccer ⚽</h3>
+        <p class="body">I play quite a bit in my free time, I play left back, and please enjoy the best goal I've ever scored.</p>
+        <!-- EDIT: goal.mp4 and goal-poster.jpg must be in the same folder as this file -->
+        <video controls playsinline preload="metadata" poster="goal-poster.jpg" aria-label="Video of my best goal">
+          <source src="goal.mp4" type="video/mp4">
+          Your browser can’t play this video. <a href="goal.mp4">Download it instead.</a>
+        </video>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

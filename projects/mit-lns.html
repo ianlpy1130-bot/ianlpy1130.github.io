@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Intern, MIT Laboratory for Nuclear Science | Ian Lam</title>
+<meta name="description" content="Research at the MIT Laboratory for Nuclear Science: thorium isotope shifts and an experiment to produce protactinium-229.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="page project">
+  <a class="back" href="../index.html#experience">← Back to all experience</a>
+
+  <h1>Research Intern, MIT Laboratory for Nuclear Science</h1>
+  <p class="date">Jun 2025 to present</p>
+  <p class="lead">I work on producing neutron-rich radioisotopes for next-generation electric dipole moment (EDM) experiments. So far that has meant two projects: estimating isotope shifts of thorium, which became a published technical report, and designing an experiment to produce protactinium-229 in-house.</p>
+  <p class="links">
+    <a class="btn" href="https://dspace.mit.edu/handle/1721.1/164953" target="_blank" rel="noopener">Read the technical report (DSpace@MIT)</a>
+  </p>
+  <p class="tags">Python, TALYS, LISE++</p>
+
+  <h2>Timeline</h2>
+  <ul class="timeline">
+    <li><b>Jul 2025</b>Organized a database of measured isotope shifts and used it to make King plots and look for nonlinearities.</li>
+    <li><b>Aug to Sep 2025</b>Estimated isotope shifts for thorium isotopes.</li>
+    <li><b>Oct to Nov 2025</b>Started designing a way to produce protactinium-229 in-house, and looked for thorium targets.</li>
+    <li><b>Jan to Feb 2026</b>Finalized the thorium report and published it on DSpace@MIT.</li>
+    <li><b>Feb 2026 onward</b>Designed the experimental setup and ran the production calculations.</li>
+    <li><b>Summer 2026</b>Planned irradiation at the MIT Cyclotron.</li>
+  </ul>
+
+  <h2>Project 1: Estimating thorium isotope shifts</h2>
+  <p>Thorium isotopes are candidates for next-generation nuclear optical clocks and for searches for symmetry-violating effects, and both need accurate spectroscopy. An isotope shift is the small change in an atom's transition frequency from one isotope to another. It depends on the nuclear size (the field shift) and the nuclear mass (the mass shift). I started by organizing a database of published isotope shifts, and used King plots to compare transitions.</p>
+  <p>The problem is that for the 690 nm transition of Th<sup>3+</sup>, direct measurements exist only for <sup>229</sup>Th and <sup>230</sup>Th, relative to <sup>232</sup>Th. To fill the gap, we compared that transition with the well-characterized Th<sup>+</sup> transition at 583.9 nm in a King plot. Using published nuclear charge radii and quadrupole deformations, this gave the field-shift constant <i>F</i> and the mass-shift constant <i>M</i> for the 690 nm line.</p>
+  <p>With <i>F</i> and <i>M</i> in hand, we calculated the missing isotope shifts. For <sup>227</sup>Th and <sup>228</sup>Th we used measured changes in the mean-square charge radius, and for the other isotopes we estimated them from the nuclear quadrupole deformation coefficients of the FRDM model. The results are in a <a href="https://dspace.mit.edu/handle/1721.1/164953" target="_blank" rel="noopener">technical report published on DSpace@MIT</a>.</p>
+    <figure class="figure">
+      <a href="images/mit/thorium-king-plot.png"><img src="images/mit/thorium-king-plot.png" alt="King plot comparing the 690 nm and 583.9 nm thorium isotope shifts, with a best-fit line and an uncertainty band" loading="lazy"></a>
+      <figcaption>King plot of the 690 nm and 583.9 nm thorium isotope shifts, with the best-fit line and its uncertainty band.</figcaption>
+    </figure>
+  <table class="data-table">
+    <caption>Estimated isotope shifts of the 690 nm line relative to <sup>232</sup>Th, in MHz (uncertainty in parentheses).</caption>
+    <thead>
+      <tr><th scope="col">Isotope</th><th scope="col">Shift (MHz)</th></tr>
+    </thead>
+    <tbody>
+        <tr><th scope="row"><sup>224</sup>Th</th><td>−29296 (5585)</td></tr>
+        <tr><th scope="row"><sup>225</sup>Th</th><td>−25840 (4930)</td></tr>
+        <tr><th scope="row"><sup>226</sup>Th</th><td>−22113 (4219)</td></tr>
+        <tr><th scope="row"><sup>227</sup>Th</th><td>−18631 (6238)</td></tr>
+        <tr><th scope="row"><sup>228</sup>Th</th><td>−14970 (6181)</td></tr>
+        <tr><th scope="row"><sup>231</sup>Th</th><td>−3742 (715)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Project 2: Producing protactinium-229</h2>
+  <p>Protactinium-229 is a good candidate for a non-zero EDM: nuclei with octupole deformation (a pear-like shape) can have an enhanced nuclear Schiff moment, which makes them a way to study CP violation. The problem is its half-life of only 1.5 days, compared with 32,760 years for protactinium-231, so it has to be produced fresh.</p>
+  <p>Our goal is to show that we can make it in-house, and to remeasure the <sup>232</sup>Th(p,4n)<sup>229</sup>Pa production cross section. The plan has three steps:</p>
+  <ol class="plain">
+    <li>Irradiate ThF<sub>4</sub> sputtering targets with 30 MeV protons at the MIT Cyclotron.</li>
+    <li>Ablate the target with a pulsed 532 nm laser inside an ultra-high-vacuum chamber.</li>
+    <li>Detect the PaF molecules with a residual gas analyzer (RGA) at the end of the chamber.</li>
+  </ol>
+    <figure class="figure">
+      <a href="images/mit/experiment-cad-overview.png"><img src="images/mit/experiment-cad-overview.png" alt="3D CAD rendering of the experiment: a vacuum chamber on an optical table with a laser and a residual gas analyzer" loading="lazy"></a>
+      <figcaption>CAD model of the experiment: the vacuum chamber, the laser and mirror, and the residual gas analyzer (RGA) on an optical table.</figcaption>
+    </figure>
+
+  <h3>Calculations for the irradiation</h3>
+  <p>The RGA can only pick out a very small amount of protactinium against the thorium, so I calculated how long to irradiate. About 5 hours gives a signal the RGA can see without being oversaturated.</p>
+    <figure class="figure">
+      <a href="images/mit/pa229-th-ratio-vs-irradiation.png"><img src="images/mit/pa229-th-ratio-vs-irradiation.png" alt="Plot of the protactinium-229 to thorium ratio rising with irradiation time up to 24 hours" loading="lazy"></a>
+      <figcaption>The <sup>229</sup>Pa/Th ratio as a function of irradiation time. The dashed lines mark the ratio at the RGA limit.</figcaption>
+    </figure>
+  <p>To check that protactinium-229 is worth making, I calculated production cross sections with TALYS from 1 to 100 MeV, including (p,n) and fission reactions. The simulation returned over 150 isotopes. Because TALYS can be off by factors of 10, I scaled it to experimental data, and for isotopes without data I extrapolated from nearby isotopes. After removing isotopes with half-lives of an hour or less, or cross sections below 0.25 mb, 131 remained. At 30 MeV, the scaled cross section for <sup>229</sup>Pa is 126 mb, higher than almost every other isotope.</p>
+    <figure class="figure">
+      <a href="images/mit/talys-cross-sections.png"><img src="images/mit/talys-cross-sections.png" alt="Six panels of cross section against proton energy for protactinium isotopes 227 to 232, comparing TALYS, scaled TALYS and experimental data" loading="lazy"></a>
+      <figcaption>TALYS (blue), scaled TALYS (orange) and experimental (red) cross sections for six protactinium isotopes.</figcaption>
+    </figure>
+    <figure class="figure">
+      <a href="images/mit/photoneutron-cross-section-maps.png"><img src="images/mit/photoneutron-cross-section-maps.png" alt="Two chart-of-the-nuclides maps showing scaled cross sections at 30 MeV for fission products and for actinides" loading="lazy"></a>
+      <figcaption>Scaled cross sections at 30 MeV across the fission-product region and the actinide region.</figcaption>
+    </figure>
+  <p>I also used LISE++ to find how deep the protons travel into the target. That depth is about 1.935 mm in thorium, and scaling for the lower density of ThF<sub>4</sub> gives about 3.6 mm.</p>
+    <figure class="figure">
+      <a href="images/mit/proton-range.png"><img src="images/mit/proton-range.png" alt="Plot of proton range in thorium-232 against energy on logarithmic axes, with a dashed line at 30 MeV" loading="lazy"></a>
+      <figcaption>Proton range in <sup>232</sup>Th against energy; the dashed line is 30 MeV.</figcaption>
+    </figure>
+    <figure class="figure">
+      <a href="images/mit/production-decay-chain.png"><img src="images/mit/production-decay-chain.png" alt="Diagram of the decay chain around protactinium-229, thorium-229, actinium-225 and radium-225" loading="lazy"></a>
+      <figcaption>The decay chain around <sup>229</sup>Pa, with the proton irradiation reactions marked by dashed arrows.</figcaption>
+    </figure>
+
+  <h3>Designing the setup</h3>
+  <p>The experiment sits on an optical table: a laser comes in through a window, hits the sample on a linear-motion feedthrough, and the RGA sits at the end of the chamber. I designed the sample holder, a trapezoidal wedge that holds the sputtering target, in Onshape.</p>
+    -->
+    <figure class="figure small">
+      <a href="images/mit/linear-feedthrough-wedge.png"><img src="images/mit/linear-feedthrough-wedge.png" alt="CAD drawing of a trapezoidal wedge on a linear feedthrough inside a pipe" loading="lazy"></a>
+      <figcaption>The trapezoidal wedge on the linear feedthrough, where the sputtering target is placed.</figcaption>
+    </figure>
+  <p>Two fixes improved the first design:</p>
+  <ul class="plain">
+    <li><b>An off-axis parabolic mirror</b> replaced the lens and cage rods, which gives more flexibility in aiming the laser.</li>
+    <li><b>The RGA is protected from oversaturation.</b> The RGA can take at most 1.25×10<sup>11</sup> singly charged ions per second, and the first design would have exceeded that. Moving the RGA from 2.46″ to 22.14″ from the sample and adding two 5 mm irises cut the rate to about 1.5×10<sup>9</sup> ions per second, 80 times below the limit.</li>
+  </ul>
+    <figure class="figure small">
+      <a href="images/mit/mirror-fix-cad.png"><img src="images/mit/mirror-fix-cad.png" alt="Top-down CAD view of the off-axis parabolic mirror mounted next to the vacuum chamber on an optical table" loading="lazy"></a>
+      <figcaption>The off-axis parabolic mirror next to the chamber.</figcaption>
+    </figure>
+    <figure class="figure">
+      <a href="images/mit/rga-distance-cad.png"><img src="images/mit/rga-distance-cad.png" alt="CAD view of the vacuum chamber stretched out to place the RGA 22.14 inches from the sample" loading="lazy"></a>
+      <figcaption>Increasing the distance between the sample and the RGA to 22.14″.</figcaption>
+    </figure>
+
+  <h3>Radiation report</h3>
+  <p>I also wrote a radiation report for the experiment. It calculates the activity of every isotope produced and the dose for each step, from removing the target from its holder to packaging the waste. The estimated dose for someone running the experiment is 0.8 mSv per year, compared with about 6 mSv per year from natural background radiation.</p>
+
+  <h2>What's next</h2>
+  <ul class="plain">
+    <li>Finish a full report on the experiment, which will be uploaded to the MIT library.</li>
+    <li>Expand the thorium report with protactinium isotope shifts, toward a full publishable paper.</li>
+    <li>Run the irradiation and the experiment.</li>
+  </ul>
+</main>
+</body>
+</html>

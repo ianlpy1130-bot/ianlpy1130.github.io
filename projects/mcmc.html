@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Starspot MCMC | Ian Lam</title>
+<meta name="description" content="Starspot MCMC: a project by Ian Lam.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="page project">
+  <a class="back" href="../index.html#projects">← Back to all projects</a>
+
+  <h1>Starspot MCMC</h1>
+  <p class="date">Mar 2025</p>
+  <p class="sub">Group project for Astrophysics Laboratory (AST 51), Tufts. <!-- EDIT: add your teammates' names here --></p>
+  <p class="lead">A Metropolis MCMC sampler written from scratch in Python that can fit models with custom priors, applied first to simple test models and then to real starspot data from the eclipsing binary CM Draconis.</p>
+
+  <p class="links">
+    <a class="btn" href="notebook-html/mcmc.html">Open the full notebook</a>
+    <a class="btn" href="notebooks/mcmc.ipynb" download>Download the .ipynb</a>
+  </p>
+  <p class="tags">Python, NumPy, SciPy, Matplotlib</p>
+
+  <h2>How it works</h2>
+  <p>The notebook builds the sampler in stages: a two-parameter line fit and a four-parameter quadratic fit, both with normal priors, then a sine curve (amplitude and frequency) with flat priors fit to the CM Draconis spot modulation flux.</p>
+  <p>It explains how the likelihood, prior and posterior fit together, how the jump size affects the acceptance rate and burn-in, and how to read the trace plots.</p>
+
+  <h2>The notebook</h2>
+  <!-- EDIT: this shows the exported notebook. Re-run python export_notebooks.py after you change a notebook. -->
+  <iframe class="pdf-frame" src="notebook-html/mcmc.html" title="Starspot MCMC notebook"></iframe>
+</main>
+</body>
+</html>

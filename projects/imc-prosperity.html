@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IMC Prosperity 4 Trading Competition | Ian Lam</title>
+<meta name="description" content="IMC Prosperity 4 Trading Competition: experience of Ian Lam.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="page project">
+  <a class="back" href="../index.html#experience">← Back to all experience</a>
+
+  <h1>IMC Prosperity 4 Trading Competition</h1>
+  <p class="date">Apr 2026</p>
+  <p class="sub">Team organizer. Top 50 in the U.S. and top 1% worldwide.</p>
+  <p class="lead">A global algorithmic trading competition run by IMC, where teams write Python trading algorithms for simulated multi-asset markets and submit a manual trading strategy.</p>
+  <p class="tags">Python</p>
+
+  <h2>What I did</h2>
+  <ul class="plain">
+    <li>Organized a four-person team and led our manual trading strategy using optimization-based decision rules.</li>
+    <li>Built Python trading algorithms for simulated multi-asset markets using Black–Scholes pricing, volatility smiles, pairs trading, and inventory-aware market making.</li>
+    <li>Backtested strategies with profit and loss broken down by product, to separate real edge from overfit historical patterns.</li>
+  </ul>
+
+  <h2>Our algorithms, round by round</h2>
+  <table class="data-table wide">
+    <caption>What we worked on in each round.</caption>
+    <thead>
+      <tr><th scope="col">Round</th><th scope="col">Focus</th></tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row">Tutorial</th><td>Market making on EMERALDS and TOMATOES.</td></tr>
+      <tr><th scope="row">Round 1</th><td>A baseline strategy, tiered-take variants and VAMP-based variants on OSMIUM and PEPPER.</td></tr>
+      <tr><th scope="row">Round 3</th><td>Scalping implied volatility on the VEV options using a fitted volatility smile, plus mean reversion on VELVETFRUIT_EXTRACT.</td></tr>
+      <tr><th scope="row">Round 4</th><td>Inventory-aware extensions of the round 3 strategies, plus STELIOS.</td></tr>
+      <tr><th scope="row">Round 5</th><td>Lead-lag signals based on counterparty and product-family behavior, pairs trading on moving averages, momentum, and combination strategies for the snackpack and pebbles products.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Tutorial round: market making</h3>
+  <p>EMERALDS has a fixed fair value of 10,000, while TOMATOES has to be estimated from the order book. We wrote two market-making versions:</p>
+  <ul class="plain">
+    <li><b>Tight quoting.</b> The fair value is the midpoint of the deepest bid and ask visible in the order book. We quote just 2 ticks on either side, with no adjustment for inventory, and use the full position limit on both sides.</li>
+    <li><b>Second-level fair value with penny quotes.</b> The fair value is the midpoint of the second level of the order book, which is more stable, while we quote one tick better than the best quotes to get filled more often. TOMATOES trading works in three phases. <i>Take</i>: buy or sell against orders at least one tick better than fair value. <i>Clear</i>: once inventory reaches ±60, unload at fair value so we never sit at the 80-unit limit. <i>Make</i>: post quotes one tick inside the best quotes with all the remaining capacity.</li>
+  </ul>
+  <p>The key insight was about who we were trading against. The market maker quoting the second level of the book was never actually traded with, and all fills happened against the market maker at the best level. So we used the second-level midpoint as a stable fair value, while competing with the best-level quotes to get filled.</p>
+
+  <!-- EDIT: add more detail below (a report link, figures, what you learned). Copy a pair of <h2> and <p> for each new section. -->
+</main>
+</body>
+</html>

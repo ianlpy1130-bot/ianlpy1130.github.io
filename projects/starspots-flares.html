@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Starspots and flares on an eclipsing binary | Ian Lam</title>
+<meta name="description" content="Starspots and flares on an eclipsing binary: a project by Ian Lam.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="page project">
+  <a class="back" href="../index.html#projects">← Back to all projects</a>
+
+  <h1>Starspots and flares on an eclipsing binary</h1>
+  <p class="date">Mar 2025</p>
+  <p class="sub">Group project for Astrophysics Laboratory (AST 51), Tufts. With Nick, Amber and Georgie.</p>
+  <p class="lead">Do flares on the eclipsing binary CM Draconis happen more often when the star's spot modulation flux is positive? We tested this on 244 flares, extending an earlier published study that had 163, using bootstrapping and a one-sample t-test.</p>
+
+  <p class="links">
+    <a class="btn" href="notebook-html/starspots-flares.html">Open the full notebook</a>
+    <a class="btn" href="notebooks/starspots-flares.ipynb" download>Download the .ipynb</a>
+  </p>
+  <p class="tags">Python, NumPy, SciPy, Matplotlib</p>
+
+  <h2>What we found</h2>
+  <ul class="plain">
+    <li>148 of the 244 flares (61%) occurred at positive spot modulation flux. For the first 163 flares, the data from the published study, it was 66%.</li>
+    <li>A bootstrap test gave a one-sided p-value of about 0.009, so the preference for positive flux still holds with the larger dataset.</li>
+    <li>A one-sample t-test on the mean flux at flare time was not significant (one-sided p ≈ 0.21), because the newer flares pull the mean down. The same test on the first 163 flares gave p ≈ 0.06.</li>
+  </ul>
+
+  <h2>How it works</h2>
+  <p>For every flare, we estimate the spot modulation flux at the flare time by linear interpolation between the two nearest data points. The bootstrap resamples 244 random times from the full spot modulation data, counts how many land at positive flux, and repeats this 10,000 times to get a p-value. The t-test compares the mean flux at flare time with zero.</p>
+
+  <h2>The notebook</h2>
+  <!-- EDIT: this shows the exported notebook. Re-run python export_notebooks.py after you change a notebook. -->
+  <iframe class="pdf-frame" src="notebook-html/starspots-flares.html" title="Starspots and flares on an eclipsing binary notebook"></iframe>
+</main>
+</body>
+</html>

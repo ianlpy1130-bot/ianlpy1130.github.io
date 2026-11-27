@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulating populations of eclipsing binary stars | Ian Lam</title>
+<meta name="description" content="Simulating populations of eclipsing binary stars: a project by Ian Lam.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="page project">
+  <a class="back" href="../index.html#projects">← Back to all projects</a>
+
+  <h1>Simulating populations of eclipsing binary stars</h1>
+  <p class="date">Feb 2025</p>
+  <p class="sub">Group project for Astrophysics Laboratory (AST 51), Tufts. With Jason and Luca.</p>
+  <p class="lead">We built a Monte Carlo model of a population of binary stars, then asked which of those systems would eclipse as seen from Earth and how eclipsing systems differ from the full population.</p>
+
+  <p class="links">
+    <a class="btn" href="notebook-html/eclipsing-binaries.html">Open the full notebook</a>
+    <a class="btn" href="notebooks/eclipsing-binaries.ipynb" download>Download the .ipynb</a>
+  </p>
+  <p class="tags">Python, NumPy, SciPy, Matplotlib</p>
+
+  <h2>What we found</h2>
+  <ul class="plain">
+    <li>Out of 100,000 simulated binaries, about 0.9% eclipse (872 in our run). Of those, 619 show both a primary and a secondary eclipse, 146 show only a primary, and 108 only a secondary.</li>
+    <li>Eclipsing systems favor short orbital periods, and their orbits are either close to circular or very eccentric.</li>
+    <li>Primary mass, mass ratio and the angle ω do not change how likely a system is to eclipse. Ω and the inclination do, and they peak at the same values for every eclipsing system.</li>
+    <li>Systems with both eclipses are mostly circular and short-period. Systems with only one eclipse have eccentric orbits, and ω decides which eclipse they show.</li>
+  </ul>
+
+  <h2>How it works</h2>
+  <p>Period, primary mass, eccentricity, inclination and the orbital angles are each drawn from an observed or physically motivated distribution (log-normal periods, a Salpeter initial mass function, a measured eccentricity distribution, uniform angles). To sample from them, we numerically build each CDF and invert it.</p>
+  <p>Each star's radius comes from its mass. For every system we trace the orbit and check whether the projected separation of the two stars ever drops below the sum of their radii. Distributions of the eclipsing systems are then compared with the full population, with Poisson error bars.</p>
+
+  <h2>The notebook</h2>
+  <!-- EDIT: this shows the exported notebook. Re-run python export_notebooks.py after you change a notebook. -->
+  <iframe class="pdf-frame" src="notebook-html/eclipsing-binaries.html" title="Simulating populations of eclipsing binary stars notebook"></iframe>
+</main>
+</body>
+</html>
